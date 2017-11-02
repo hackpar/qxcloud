@@ -1,0 +1,17 @@
+<ion-view >
+  <ion-nav-title>错题本</ion-nav-title>
+  <ion-content scrollbar-y="false">
+    <ion-refresher pulling-text="下拉刷新..." spinner="dots" on-refresh="refreshHandle()"></ion-refresher>
+
+    <div class="errbook">
+
+      <ul class="list">
+        <li class="item item-icon-left" flash ui-sref="main.errbook-list({id:item.subject_id})" ng-repeat="item in list">
+          <i class="icon ion-{{item.name}}"></i>
+          {{item.subject_name}}
+          <span class="badge balanced-bg">{{item.subject_id}}道</span>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

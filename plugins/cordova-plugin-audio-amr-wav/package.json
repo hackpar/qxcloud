@@ -1,0 +1,79 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "https://github.com/hackpar/cordova-plugin-audio-amr-wav-test",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/hackpar/cordova-plugin-audio-amr-wav-test",
+        "spec": "git+https://github.com/hackpar/cordova-plugin-audio-amr-wav-test.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:hackpar/cordova-plugin-audio-amr-wav-test.git",
+          "sshUrl": "git+ssh://git@github.com/hackpar/cordova-plugin-audio-amr-wav-test.git",
+          "httpsUrl": "git+https://github.com/hackpar/cordova-plugin-audio-amr-wav-test.git",
+          "gitUrl": "git://github.com/hackpar/cordova-plugin-audio-amr-wav-test.git",
+          "shortcut": "github:hackpar/cordova-plugin-audio-amr-wav-test",
+          "directUrl": "https://raw.githubusercontent.com/hackpar/cordova-plugin-audio-amr-wav-test/master/package.json"
+        }
+      },
+      "/Users/qinxue/Desktop/QXCloud-zhang/node_modules"
+    ]
+  ],
+  "_from": "git+https://github.com/hackpar/cordova-plugin-audio-amr-wav-test.git",
+  "_id": "cordova-plugin-audio-amr-wav@1.0.0",
+  "_inCache": true,
+  "_location": "/cordova-plugin-audio-amr-wav",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "https://github.com/hackpar/cordova-plugin-audio-amr-wav-test",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "https://github.com/hackpar/cordova-plugin-audio-amr-wav-test",
+    "spec": "git+https://github.com/hackpar/cordova-plugin-audio-amr-wav-test.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:hackpar/cordova-plugin-audio-amr-wav-test.git",
+      "sshUrl": "git+ssh://git@github.com/hackpar/cordova-plugin-audio-amr-wav-test.git",
+      "httpsUrl": "git+https://github.com/hackpar/cordova-plugin-audio-amr-wav-test.git",
+      "gitUrl": "git://github.com/hackpar/cordova-plugin-audio-amr-wav-test.git",
+      "shortcut": "github:hackpar/cordova-plugin-audio-amr-wav-test",
+      "directUrl": "https://raw.githubusercontent.com/hackpar/cordova-plugin-audio-amr-wav-test/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/hackpar/cordova-plugin-audio-amr-wav-test.git#52214e225320f70f36b620ccd5e5ea08f6806ded",
+  "_shasum": "ccf37bbe173ee0f33c51011686608a01461386f9",
+  "_shrinkwrap": null,
+  "_spec": "https://github.com/hackpar/cordova-plugin-audio-amr-wav-test",
+  "_where": "/Users/qinxue/Desktop/QXCloud-zhang/node_modules",
+  "author": {
+    "name": "cordova-plugin-audio-amr-wav"
+  },
+  "bugs": {
+    "url": "https://github.com/hackpar/cordova-plugin-audio-amr-wav-test.git"
+  },
+  "dependencies": {},
+  "description": "cordova-plugin-audio-amr-wav",
+  "devDependencies": {},
+  "gitHead": "52214e225320f70f36b620ccd5e5ea08f6806ded",
+  "homepage": "https://github.com/hackpar/cordova-plugin-audio-amr-wav-test.git",
+  "license": "MIT",
+  "name": "cordova-plugin-audio-amr-wav",
+  "optionalDependencies": {},
+  "readme": "##cordova-plugin-audio-amr-wav\n\n**Cordova / PhoneGap 录音插件**：具备录制并播放WAV格式功能，同时提供AMR与WAV相互转换功能\n\n## 安装\n\n#### 从Github安装最新版本\n\n```\ncordova plugin add https://github.com/bl905060/cordova-plugin-audio-amr-wav.git\n```\n\n## 使用\n\n### 录制\n\n##### 1、开始录制\n\n```js\n//传入音频的文件名\nrecordAudio.record(“audioFileName”);\n\n//不传入文件名时将默认调用idcode插件产生文件名\nrecordAudio.record();\n```\n注：[IDCode](https://github.com/bl905060/cordova-plugin-idcode)插件将根据时间、用户名的MD5值等信息产生，详细信息请自行查看[IDCode](https://github.com/bl905060/cordova-plugin-idcode)插件\n##### 2、停止录制\n\n```js\n//使用成功回调函数\nrecordAudio.stop(recordSucess);\n\n//成功回调函数中会包含录制文件的全路径、持续时间以及文件名\nfunction recordSucess(results) {\n    //全路径以\"file://\"为前缀，返回amr格式的路径，同时保留wav格式的文件\n    alert(results.fullPath);\n    //持续时间以秒为单位，并向下取整\n    alert(results.duration);\n    //传回文件名\n    alert(results.voiceID);\n}\n```\n\n### 播放\n\n```js\n//传入amr格式文件的全路径，播放之前先将amr格式转换为wav格式并开始播放wav文件，同时保留amr格式文件\nrecordAudio.play(audioURL);\n```\n\n### WAV转AMR\n\n```js\n//传入wav文件全路径，并使用成功回调函数\nrecordAudio.convertToAmr(audioURL, convertSuccess);\n\n//成功回调函数中会包含录制文件的全路径、持续时间以及文件名\nfunction convertSuccess(results) {\n    //全路径以\"file://\"为前缀，返回amr格式的路径，同时保留wav格式的文件\n    alert(results.fullPath);\n    //持续时间以秒为单位，并向下取整\n    alert(results.duration);\n    //传回文件名\n    alert(results.voiceID);\n}\n```\n\n### AMR转WAV\n\n```js\n//传入wav文件全路径，并使用成功回调函数\nrecordAudio.convertToWav(audioURL, convertSuccess);\n\n//成功回调函数中会包含录制文件的全路径、持续时间以及文件名\nfunction convertSuccess(results) {\n    //全路径以\"file://\"为前缀，返回amr格式的路径，同时保留wav格式的文件\n    alert(results.fullPath);\n    //持续时间以秒为单位，并向下取整\n    alert(results.duration);\n    //传回文件名\n    alert(results.voiceID);\n}\n```\n\n### 删除音频文件\n\n```js\n//传入amr文件全路径时将会同时删除amr、wav格式文件，传入wav文件全路径时仅删除wav格式文件\nrecordAudio.deleteAudio(audioURL);\n```\n\n## 完整案例\n\n```js\n//控件触碰开始时进行录音\ndocument.getElementById(\"recorder\").addEventListener('touchstart', function() {\n    recordAudio.record();\n}, false);\n\n//控件触碰结束时停止录音 \ndocument.getElementById(\"recorder\").addEventListener('touchend', function() {\n    recordAudio.stop(recordSucess);\n \n    function recordSucess(results) {\n        alert(results.fullPath);\n        alert(results.duration);\n        alert(results.voiceID);\n    }\n}, false);\n\n//控件触碰开始时播放录音\ndocument.getElementById(\"player\").addEventListener('touchstart', function() {\n    var audioURL = document.getElementById(\"audioURL\").value;\n    recordAudio.play(audioURL);\n}, false);\n\n//控件触碰开始时将wav文件转换为amr文件\ndocument.getElementById(\"convertToAmr\").addEventListener('touchstart', function() {\n    var audioURL = document.getElementById(\"audioURL\").value;\n    recordAudio.convertToAmr(audioURL, convertSuccess);\n \n    function convertSuccess(results) {\n        alert(results.fullPath);\n        alert(results.duration);\n        alert(results.voiceID);\n    }\n}, false);\n\n//控件触碰开始时将amr文件转换为wav文件\ndocument.getElementById(\"convertToWav\").addEventListener('touchstart', function() {\n    var audioURL = document.getElementById(\"audioURL\").value;\n    recordAudio.convertToWav(audioURL, convertSuccess);\n    \n    function convertSuccess(results) {\n        alert(results.fullPath);\n        alert(results.duration);\n        alert(results.voiceID);\n    }\n}, false);\n\n//控件触碰开始时将将删除传入路径所对应的文件\ndocument.getElementById(\"deleteAudio\").addEventListener('touchstart', function() {\n    var audioURL = document.getElementById(\"audioURL\").value;\n    recordAudio.deleteAudio(audioURL);\n}, false);\n```\n\n## 平台支持\n\niOS (7+) only.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackpar/cordova-plugin-audio-amr-wav-test.git"
+  },
+  "scripts": {},
+  "version": "1.0.0"
+}

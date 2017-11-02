@@ -1,0 +1,79 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "https://github.com/hackpar/cordova-plugin-operate-plist-test.git",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/hackpar/cordova-plugin-operate-plist-test.git",
+        "spec": "git+https://github.com/hackpar/cordova-plugin-operate-plist-test.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:hackpar/cordova-plugin-operate-plist-test.git",
+          "sshUrl": "git+ssh://git@github.com/hackpar/cordova-plugin-operate-plist-test.git",
+          "httpsUrl": "git+https://github.com/hackpar/cordova-plugin-operate-plist-test.git",
+          "gitUrl": "git://github.com/hackpar/cordova-plugin-operate-plist-test.git",
+          "shortcut": "github:hackpar/cordova-plugin-operate-plist-test",
+          "directUrl": "https://raw.githubusercontent.com/hackpar/cordova-plugin-operate-plist-test/master/package.json"
+        }
+      },
+      "/Users/qinxue/Desktop/QXCloud2/node_modules"
+    ]
+  ],
+  "_from": "git+https://github.com/hackpar/cordova-plugin-operate-plist-test.git",
+  "_id": "cordova-plugin-operate-plist@0.0.4",
+  "_inCache": true,
+  "_location": "/cordova-plugin-operate-plist",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "https://github.com/hackpar/cordova-plugin-operate-plist-test.git",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "https://github.com/hackpar/cordova-plugin-operate-plist-test.git",
+    "spec": "git+https://github.com/hackpar/cordova-plugin-operate-plist-test.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:hackpar/cordova-plugin-operate-plist-test.git",
+      "sshUrl": "git+ssh://git@github.com/hackpar/cordova-plugin-operate-plist-test.git",
+      "httpsUrl": "git+https://github.com/hackpar/cordova-plugin-operate-plist-test.git",
+      "gitUrl": "git://github.com/hackpar/cordova-plugin-operate-plist-test.git",
+      "shortcut": "github:hackpar/cordova-plugin-operate-plist-test",
+      "directUrl": "https://raw.githubusercontent.com/hackpar/cordova-plugin-operate-plist-test/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/hackpar/cordova-plugin-operate-plist-test.git#18abd8b8556ee1564a7f14672f5b64c6b3c91193",
+  "_shasum": "98781cc9e464ab45105fc2647b4d0fd679e422cb",
+  "_shrinkwrap": null,
+  "_spec": "https://github.com/hackpar/cordova-plugin-operate-plist-test.git",
+  "_where": "/Users/qinxue/Desktop/QXCloud2/node_modules",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/hackpar/cordova-plugin-operate-plist-test/issues"
+  },
+  "dependencies": {},
+  "description": "**Cordova / PhoneGap 读写Plist文件插件**：具备读、写、拷贝Plist文件功能",
+  "devDependencies": {},
+  "gitHead": "18abd8b8556ee1564a7f14672f5b64c6b3c91193",
+  "homepage": "https://github.com/hackpar/cordova-plugin-operate-plist-test#readme",
+  "license": "ISC",
+  "name": "cordova-plugin-operate-plist",
+  "optionalDependencies": {},
+  "readme": "##cordova-plugin-operate-plist\n\n**Cordova / PhoneGap 读写Plist文件插件**：具备读、写、拷贝Plist文件功能\n\n## 安装\n\n#### 从Github安装最新版本\n\n```\ncordova plugin add https://github.com/bl905060/cordova-plugin-operate-plist.git\n```\n\n## 使用\n\n### 写入Plist文件\n\n```js\n//创建需要写入的内容\nvar userinfo = {\n    \"user_id\" : responseData.user_id,\n    \"user_mobile\" : responseData.user_mobile,\n    \"user_email\" : responseData.user_email,\n    \"org_id\" : responseData.org_id\n};\n\n//传入文件名以及需要写入的对象\noperatePlist.write(\"userinfo\", userinfo);\n\n//只传入需要写入的对象则默认写入userinfo.plist文件\noperatePlist.write(userinfo);\n```\n\n### 读取Plist文件\n\n```js\n//传入需要读取的Plist文件的文件名，以及成功回调函数\noperatePlist.read(\"userinfo\", readSuccess, readFail);\n\n//只传入回调函数则默认读取userinfo.plist文件\noperatePlist.read(readSuccess, readFail);\n\nfunction readSuccess(responseData) {\n    alert(responseData.user_id);\n    alert(responseData.user_mobile);\n    alert(responseData.user_email);\n    alert(responseData.org_id);\n}\n\nfunction readFail() {\n//do something\n}\n```\n\n### 拷贝Plist文件\n\n```js\n//初始化时将www文件夹中指定的Plist文件拷贝至Library目录中，可在该Plist中写入初始化信息\noperatePlist.copy(\"userinfo\");\n```\n\n## 平台支持\n\niOS (7+) only.\n\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackpar/cordova-plugin-operate-plist-test.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.4"
+}

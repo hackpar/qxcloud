@@ -1,0 +1,109 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "https://github.com/leecrossley/cordova-plugin-progress.git",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/leecrossley/cordova-plugin-progress.git",
+        "spec": "git+https://github.com/leecrossley/cordova-plugin-progress.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:leecrossley/cordova-plugin-progress.git",
+          "sshUrl": "git+ssh://git@github.com/leecrossley/cordova-plugin-progress.git",
+          "httpsUrl": "git+https://github.com/leecrossley/cordova-plugin-progress.git",
+          "gitUrl": "git://github.com/leecrossley/cordova-plugin-progress.git",
+          "shortcut": "github:leecrossley/cordova-plugin-progress",
+          "directUrl": "https://raw.githubusercontent.com/leecrossley/cordova-plugin-progress/master/package.json"
+        }
+      },
+      "/Users/qinxue/Desktop/QXCloud-zhang/node_modules"
+    ]
+  ],
+  "_from": "git+https://github.com/leecrossley/cordova-plugin-progress.git",
+  "_id": "cordova-plugin-progress@0.3.0",
+  "_inCache": true,
+  "_location": "/cordova-plugin-progress",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "https://github.com/leecrossley/cordova-plugin-progress.git",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "https://github.com/leecrossley/cordova-plugin-progress.git",
+    "spec": "git+https://github.com/leecrossley/cordova-plugin-progress.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:leecrossley/cordova-plugin-progress.git",
+      "sshUrl": "git+ssh://git@github.com/leecrossley/cordova-plugin-progress.git",
+      "httpsUrl": "git+https://github.com/leecrossley/cordova-plugin-progress.git",
+      "gitUrl": "git://github.com/leecrossley/cordova-plugin-progress.git",
+      "shortcut": "github:leecrossley/cordova-plugin-progress",
+      "directUrl": "https://raw.githubusercontent.com/leecrossley/cordova-plugin-progress/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/leecrossley/cordova-plugin-progress.git#62b5b87cc4b184d2a7d59eb85b5df79ae91cfcc1",
+  "_shasum": "fbd1980e689cdd6000426653e14d8bad1a9bcd9e",
+  "_shrinkwrap": null,
+  "_spec": "https://github.com/leecrossley/cordova-plugin-progress.git",
+  "_where": "/Users/qinxue/Desktop/QXCloud-zhang/node_modules",
+  "author": {
+    "name": "Lee Crossley",
+    "email": "leee@hotmail.co.uk",
+    "url": "http://ilee.co.uk/"
+  },
+  "bugs": {
+    "url": "https://github.com/leecrossley/cordova-plugin-progress/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-progress",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "Cordova / PhoneGap Plugin for Progress HUD Notifications via KVNProgress",
+  "devDependencies": {},
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    },
+    {
+      "name": "apple-ios",
+      "version": ">=8.2.0"
+    }
+  ],
+  "gitHead": "62b5b87cc4b184d2a7d59eb85b5df79ae91cfcc1",
+  "homepage": "https://github.com/leecrossley/cordova-plugin-progress#readme",
+  "keywords": [
+    "cordova",
+    "progress",
+    "hud",
+    "notification",
+    "message",
+    "toast",
+    "status",
+    "overlay",
+    "loader",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-progress",
+  "optionalDependencies": {},
+  "readme": "## Progress Plugin for Apache Cordova [![npm version](https://badge.fury.io/js/cordova-plugin-progress.svg)](http://badge.fury.io/js/cordova-plugin-progress)\n\n**Cordova / PhoneGap Plugin for Progress HUD Notifications via [KVNProgress](https://github.com/kevin-hirsch/KVNProgress).**\n\n## Demo\n\n<img src=\"https://raw.github.com/leecrossley/cordova-plugin-progress/master/progress.gif\" alt=\"Cordova Progress\" width=\"180\">\n\n## Install\n\n#### Latest published version on npm (with Cordova CLI >= 5.0.0)\n\n```\ncordova plugin add cordova-plugin-progress\n```\n\n#### Latest version from GitHub\n\n```\ncordova plugin add https://github.com/leecrossley/cordova-plugin-progress.git\n```\n\nYou **do not** need to reference any JavaScript, the Cordova plugin architecture will add a `progress` object to your root automatically when you build.\n\n## Usage\n\n### show\n\nShow the basic indeterminate progress loader.\n\n```js\n// with success and error handlers\nprogress.show(successHandler, errorHandler);\n\n// without callback functions\nprogress.show();\n```\n\nShow the basic indeterminate progress loader, with text. When text is supplied, the loader width is larger.\n\n```js\n// with success and error handlers\nprogress.show(successHandler, errorHandler, {\"text\": \"Loading...\"});\n\n// with success and error handlers (shorthand)\nprogress.show(successHandler, errorHandler, \"Loading...\");\n\n// without callback functions\nprogress.show({\"text\": \"Loading...\"});\n\n// without callback functions (shorthand)\nprogress.show(\"Loading...\");\n```\n\n### update\n\nUpdate the loader text on the fly (animated). If the loader was initiated without text, the width will remain smaller than if it was initiated with text.\n\n```js\n// with success and error handlers\nprogress.update(successHandler, errorHandler, {\"text\": \"Still loading...\"});\n\n// with success and error handlers (shorthand)\nprogress.update(successHandler, errorHandler, \"Still loading...\");\n\n// without callback functions\nprogress.update({\"text\": \"Still loading...\"});\n\n// without callback functions (shorthand)\nprogress.update(\"Still loading...\");\n```\n\nYou can also use the update function to remove any previous text (an empty string is treated the same as omitting the string).\n\n```js\n// with success and error handlers\nprogress.update(successHandler, errorHandler);\n\n// without callback functions\nprogress.update();\n```\n\n### hide\n\nHide the loader. Note that the `successHandler` is called after the loader has completely disappeared.\n\n```js\n// with success and error handlers\nprogress.hide(successHandler, errorHandler);\n\n// without callback functions\nprogress.hide();\n```\n\n## Full basic example\n\n```js\n// after the cordova device ready event has fired\nprogress.show(\"Loading...\");\n\nsetTimeout(function () {\n    progress.update(\"Still loading...\");\n}, 1500);\n\nsetTimeout(function () {\n    progress.hide();\n}, 3000);\n```\n\n## Platforms\n\niOS (7+) only.\n\n## License\n\n[MIT License](http://ilee.mit-license.org)\n\n[KVNProgress](https://github.com/kevin-hirsch/KVNProgress#license)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leecrossley/cordova-plugin-progress.git"
+  },
+  "version": "0.3.0"
+}

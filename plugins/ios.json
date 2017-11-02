@@ -1,0 +1,115 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "Umeng": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-hot-code-push-plugin": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-actionsheet": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-app-version": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-audio-amr-wav": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-camera": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-datepicker": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-file-opener2": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-filepath": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-getuisdk": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-insomnia": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-media": {
+            "MICROPHONE_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-operate-plist": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-pin-dialog": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-screen-orientation": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "phonegap-plugin-push": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-image-process": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-progress": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        },
+        "es6-promise-plugin": {
+            "PACKAGE_NAME": "com.qxclass.student"
+        }
+    }
+}

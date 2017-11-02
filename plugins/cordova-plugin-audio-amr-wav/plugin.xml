@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	id="cordova-plugin-audio-amr-wav" version="1.0.4">
+
+<name>record audio with amr or wav</name>
+
+<license>HDU</license>
+
+<keywords>amr,wav,AmrToWav,WavToAmr</keywords>
+
+<description>Native interface to record audio with wav and convert to amr.</description>
+
+<author>Leibi</author>
+
+<engines>
+	<engine name="cordova" version=">=3.3.0" />
+</engines>
+
+<js-module src="www/recordAudio.js" name="recordAudio.js">
+	<clobbers target="recordAudio" />
+</js-module>
+
+<dependency id="cordova-plugin-progress" url="https://github.com/leecrossley/cordova-plugin-progress.git" />
+
+<!-- ios -->
+<platform name="ios">
+	<config-file target="config.xml" parent="/widget">
+		<feature name="recordAudio">
+			<param name="ios-package" value="recordAudio" />
+		</feature>
+	</config-file>
+
+	<header-file src="src/ios/recordAudio.h" />
+	<source-file src="src/ios/recordAudio.m" />
+    
+    <header-file src="src/ios/VoiceConvert/VoiceConverter.h" />
+    <source-file src="src/ios/VoiceConvert/VoiceConverter.mm" />
+    <header-file src="src/ios/VoiceConvert/amrwapper/amrFileCodec.h" />
+    <source-file src="src/ios/VoiceConvert/amrwapper/amrFileCodec.mm" />
+    <header-file src="src/ios/VoiceConvert/opencore-amrnb/interf_dec.h" />
+    <header-file src="src/ios/VoiceConvert/opencore-amrnb/interf_enc.h" />
+    <header-file src="src/ios/VoiceConvert/opencore-amrwb/dec_if.h" />
+    <header-file src="src/ios/VoiceConvert/opencore-amrwb/if_rom.h" />
+    <source-file src="src/ios/VoiceConvert/lib/libopencore-amrnb.a" framework="true" />
+    <source-file src="src/ios/VoiceConvert/lib/libopencore-amrwb.a" framework="true" />
+    
+    <framework src="AVFoundation.framework" />
+</platform>
+</plugin>

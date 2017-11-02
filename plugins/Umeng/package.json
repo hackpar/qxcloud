@@ -1,0 +1,82 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "https://github.com/hackpar/qxclass-Umeng",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/hackpar/qxclass-Umeng",
+        "spec": "git+https://github.com/hackpar/qxclass-Umeng.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:hackpar/qxclass-Umeng.git",
+          "sshUrl": "git+ssh://git@github.com/hackpar/qxclass-Umeng.git",
+          "httpsUrl": "git+https://github.com/hackpar/qxclass-Umeng.git",
+          "gitUrl": "git://github.com/hackpar/qxclass-Umeng.git",
+          "shortcut": "github:hackpar/qxclass-Umeng",
+          "directUrl": "https://raw.githubusercontent.com/hackpar/qxclass-Umeng/master/package.json"
+        }
+      },
+      "/Users/qinxue/Desktop/cordova/test/node_modules"
+    ]
+  ],
+  "_from": "git+https://github.com/hackpar/qxclass-Umeng.git",
+  "_id": "qxclass-umeng-analytics-sdk@3.0.0",
+  "_inCache": true,
+  "_location": "/qxclass-umeng-analytics-sdk",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "https://github.com/hackpar/qxclass-Umeng",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "https://github.com/hackpar/qxclass-Umeng",
+    "spec": "git+https://github.com/hackpar/qxclass-Umeng.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:hackpar/qxclass-Umeng.git",
+      "sshUrl": "git+ssh://git@github.com/hackpar/qxclass-Umeng.git",
+      "httpsUrl": "git+https://github.com/hackpar/qxclass-Umeng.git",
+      "gitUrl": "git://github.com/hackpar/qxclass-Umeng.git",
+      "shortcut": "github:hackpar/qxclass-Umeng",
+      "directUrl": "https://raw.githubusercontent.com/hackpar/qxclass-Umeng/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/hackpar/qxclass-Umeng.git#4f67d67d258c084c97b00e0a3664f5e142c58ae4",
+  "_shasum": "00cbe812a0f7ac1397a1f1637f29c95beff210c0",
+  "_shrinkwrap": null,
+  "_spec": "https://github.com/hackpar/qxclass-Umeng",
+  "_where": "/Users/qinxue/Desktop/cordova/test/node_modules",
+  "author": {
+    "name": "zhangjiadi"
+  },
+  "bugs": {
+    "url": "https://github.com/hackpar/qxclass-Umeng/issues"
+  },
+  "dependencies": {},
+  "dependent_plugins": {},
+  "description": "qxclass-umeng-analytics-sdk",
+  "devDependencies": {},
+  "gitHead": "4f67d67d258c084c97b00e0a3664f5e142c58ae4",
+  "homepage": "https://github.com/hackpar/qxclass-Umeng",
+  "license": "MIT",
+  "name": "qxclass-umeng-analytics-sdk",
+  "optionalDependencies": {},
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackpar/qxclass-Umeng.git"
+  },
+  "version": "3.0.0"
+}

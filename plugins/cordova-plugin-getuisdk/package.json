@@ -1,0 +1,87 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "https://github.com/hackpar/qxclass-cordova-plugin-getuisdk.git",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/hackpar/qxclass-cordova-plugin-getuisdk.git",
+        "spec": "git+https://github.com/hackpar/qxclass-cordova-plugin-getuisdk.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:hackpar/qxclass-cordova-plugin-getuisdk.git",
+          "sshUrl": "git+ssh://git@github.com/hackpar/qxclass-cordova-plugin-getuisdk.git",
+          "httpsUrl": "git+https://github.com/hackpar/qxclass-cordova-plugin-getuisdk.git",
+          "gitUrl": "git://github.com/hackpar/qxclass-cordova-plugin-getuisdk.git",
+          "shortcut": "github:hackpar/qxclass-cordova-plugin-getuisdk",
+          "directUrl": "https://raw.githubusercontent.com/hackpar/qxclass-cordova-plugin-getuisdk/master/package.json"
+        }
+      },
+      "D:\\QXCloud\\node_modules"
+    ]
+  ],
+  "_from": "git+https://github.com/hackpar/qxclass-cordova-plugin-getuisdk.git",
+  "_id": "cordova-plugin-getuisdk@1.0.6",
+  "_inCache": true,
+  "_location": "/cordova-plugin-getuisdk",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "https://github.com/hackpar/qxclass-cordova-plugin-getuisdk.git",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "https://github.com/hackpar/qxclass-cordova-plugin-getuisdk.git",
+    "spec": "git+https://github.com/hackpar/qxclass-cordova-plugin-getuisdk.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:hackpar/qxclass-cordova-plugin-getuisdk.git",
+      "sshUrl": "git+ssh://git@github.com/hackpar/qxclass-cordova-plugin-getuisdk.git",
+      "httpsUrl": "git+https://github.com/hackpar/qxclass-cordova-plugin-getuisdk.git",
+      "gitUrl": "git://github.com/hackpar/qxclass-cordova-plugin-getuisdk.git",
+      "shortcut": "github:hackpar/qxclass-cordova-plugin-getuisdk",
+      "directUrl": "https://raw.githubusercontent.com/hackpar/qxclass-cordova-plugin-getuisdk/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/hackpar/qxclass-cordova-plugin-getuisdk.git#3885bc466ca66515f9243544852ed14ee0c011ab",
+  "_shasum": "bea14fe166d41930d831d203d81fc1dc04d3ab2d",
+  "_shrinkwrap": null,
+  "_spec": "https://github.com/hackpar/qxclass-cordova-plugin-getuisdk.git",
+  "_where": "D:\\QXCloud\\node_modules",
+  "author": {
+    "name": "getui"
+  },
+  "bugs": {
+    "url": "https://github.com/GetuiLaboratory/cordova-plugin-getuisdk/issues"
+  },
+  "dependencies": {},
+  "description": "cordova plugin for getui sdk push",
+  "devDependencies": {},
+  "gitHead": "3885bc466ca66515f9243544852ed14ee0c011ab",
+  "homepage": "https://github.com/GetuiLaboratory/cordova-plugin-getuisdk#readme",
+  "keywords": [
+    "getui",
+    "push",
+    "ecosystem:cordova",
+    "ecosystem:phonegap",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-getuisdk",
+  "optionalDependencies": {},
+  "readme": "# cordova-plugin-getuisdk\n##安装cordova环境\n* 安装cordova\n```\nnpm install -g cordova\n```\n* 安装 plugman\n```\nnpm install -g plugman\n```\n* 创建 cordova 工程\n```\ncordova create 目录名 应用包名 工程名\n```\n* 使用 cordova 命令方式添加插件\n\n\t其中 PUSH_APPID、PUSH_APPKEY、PUSH_APPSECRET 为 Android 所需参数。如果只用到 iOS，则直接拷贝下列命令运行，否则添加失败。\n\n````\ncordova plugin add cordova-plugin-getuisdk --variable PUSH_APPID=你的appid --variable PUSH_APPKEY=你的appkey --variable PUSH_APPSECRET=你的appsecret\n````\n## Android平台支持\n* 添加android平台\n```\ncordova platform add android\n```\n* 添加个推推送\n```\n// plugman 集成方式，若已使用 cordova 命令集成则可略过。\nplugman install --platform android --project android平台目录 --plugin https://github.com/GetuiLaboratory/cordova-plugin-getuisdk --plugins_dir 你的插件目录 --variable PUSH_APPID=你的appid --variable PUSH_APPKEY=你的appkey --variable PUSH_APPSECRET=你的appsecret\n```\n* 安装之后需要重新构建工程\n```\ncordova build\n```\n* JS文件中进行个推初始化\n\n##### 回调函数\n```\nfunction callback(type, data) {\n\tif(type == 'cid') {\n\t\t//TODO data = clientid\n\t} else if(type == 'pid') {\n\t\t//TODO data = 进程pid\n\t} else if(type == 'payload') {\n   \t\t//TODO data=透传数据\n\t} else if(type == 'online') {\n\t\tif(data == 'true') {\n\t\t\t//TODO 已上线\n\t\t} else {\n\t\t\t//TODO 已离线\n\t\t}\n\t}\n};\n```\n##### 初始化插件\n```\n GeTuiSdkPlugin.callback_init(callback);   \n GeTuiSdkPlugin.initialize();\n```\n\n##### 回调示例\n```\n\nfunction callback(data){\n\talert('value =  ' + data);\n}\n\nfunction getCID(back){\n\tGeTuiSdkPlugin.getClientId(back);\n}\n\nfunction getVersion(back){\n\tGeTuiSdkPlugin.getVersion(back);\n}\n\n```\n\n\n##### 补充说明\n1，如果用户工程中已有 android-support-v4.jar 文件包，则需要将 plugin.xml 中的 ```<source-file src=\"android/GtSdkLib/android-support-v4.jar\" target-dir=\"libs\"/> ``` 该行去掉；<br/>\n\n\n\n\n\n\n\n## iOS平台支持\n* 添加ios平台\n\n```\ncordova platform add ios\n```\n* 添加个推推送\n```\n// plugman 集成方式，若已使用 cordova 命令集成则可略过此步骤。\nplugman install --platform ios --project ios平台目录 --plugin https://github.com/GetuiLaboratory/cordova-plugin-getuisdk --plugins_dir 你的插件目录\n```\n* 安装之后需要重新构建工程\n```\ncordova build\n```\n* iOS 需要添加依赖插件 phonegap-plugin-push，直接复制下面命令，不需要考虑 SENDER_ID 的内容\n\n````\ncordova plugin add phonegap-plugin-push --variable SENDER_ID=\"My Sender ID\"\n````\n\n* JS文件中进行个推初始化\n\n##### 回调函数\n```\n//clinetid返回\nfunction onRegisterClient(clientId) {\n\t//TODO clientId = clinetid   \n}；\n\n//透传数据返回\nfunction onReceivePayload(payloadId, taskId, msgId, offLine, appId) {\n     //TODO playload = 透传数据\n\t //TODO taskId = 推送消息的任务id\n\t //TODO msgId = 推送消息的messageid\n\t //TODO offLine = 是否是离线消息，YES.是离线消息\n\t //TODO appId = 应用的appId\n\n};\n\n//发送上行消息返回\nfunction onSendMessage(messageId, result) {\n\t//TODO messageid = 发送上行消息id\n\t//TODO result = 发送结果\n}；\n\n//SDK内部发生错误返回\nfunction onOccurError(err) {\n\t//TODO err = 错误信息\n};\n\n//sdk状态返回\nfunction onNotifySdkState(status) {\n\tvar callback = function(status) {\n        \tswitch (status) {\n        \t\tcase GeTuiSdk.GeTuiSdkStatus.KSdkStatusStarting:\n                   \t\t//TODO 正在启动\n                   \tbreak;\n               \t\tcase GeTuiSdk.GeTuiSdkStatus.KSdkStatusStarted:\n                \t\t//TODO 已经启动\n                \tbreak;\n\t\t\tcase GeTuiSdk.GeTuiSdkStatus.KSdkStatusStoped:\n\t\t\t\t//TODO 已经停止\n                   \tbreak;\n\t\t\tdefault:\n\t\t\tbreak;\n\t\t}\n\t};\n\tGeTuiSdk.status(callback);\n}；\n\n//SDK设置关闭推送模式回调\nfunction onSetPushMode(isModeOff, err) {\n\tif (err != null) {\n\t\t//TODO 设置关闭模式失败\n\t} else {\n\t\t//TODO 设置关闭模式成功\n\t}\n};\n```\n##### 初始化插件\n```\nGeTuiSdk.setGeTuiSdkDidRegisterClientCallback(onRegisterClient);\nGeTuiSdk.setGeTuiSdkDidReceivePayloadCallback(onReceivePayload);\nGeTuiSdk.setGeTuiSdkDidSendMessageCallback(onSendMessage);\nGeTuiSdk.setGeTuiSdkDidOccurErrorCallback(onOccurError);\nGeTuiSdk.setGeTuiSDkDidNotifySdkStateCallback(onNotifySdkState);\nGeTuiSdk.setGeTuiSdkDidSetPushModeCallback(onSetPushMode);\n//个推平台申请的参数KAppId, KAppKey, KAppSecret\nGeTuiSdk.startSdkWithAppId(KAppId, KAppKey, KAppSecret);\n\n// 需要依赖插件 phonegap-plugin-push 获取 deviceToken 并注册到个推 SDK\nvar options = {\n    ios: {\n        alert: \"true\",\n        badge: \"true\",\n        sound: \"true\"\n    }\n};\n\nvar push = PushNotification.init(options);\n\nvar onRegistration = function(data) {\n    console.log(data.registrationId+' deviceToken');\n\t\t// 获取 deviceToken 成功，注册 deviceToken 到个推 SDK\n    GeTuiSdk.registerDeviceToken(data.registrationId);\n};\npush.on('registration', onRegistration);\n\nvar onNotification = function(data) {\n    var date = new Date();\n    var dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();\n    app.log('[APN] ' + dateStr + 'title:' + data.title + ' message:' + data.message);\n};\npush.on('notification', onNotification);\n\nvar onError = function(e) {\n    GeTuiSdk.registerDeviceToken('');\n    app.log('didFailToRegisterForRemoteNotificationsWithError' + e.message);\n};\npush.on('error', onError);\n```\n## 参考文档\n[iOS Demo 链接](https://github.com/GetuiLaboratory/cordova-plugin-getuisdk/tree/master/ios/demo/www)  \n\n[cordova常用命令](http://my.oschina.net/jack088/blog/390876?fromerr=f8h2gkFq)  \n\n[plugman使用](http://cordova.apache.org/docs/en/latest/plugin_ref/plugman.html)  \n\n[个推官方文档](http://docs.getui.com/)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GetuiLaboratory/cordova-plugin-getuisdk.git"
+  },
+  "scripts": {},
+  "version": "1.0.6"
+}

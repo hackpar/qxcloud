@@ -1,0 +1,75 @@
+<ion-view hide-tabs>
+  <ion-nav-title>错题本-小学数学</ion-nav-title>
+  <ion-content scrollbar-y="false">
+    <ion-scroll direction="y" scroll-height="-20" scrollbar-y="false" has-bouncing="true" class="errbook-items">
+      <ion-refresher pulling-text="下拉刷新..." spinner="dots" on-refresh="refreshHandle()"></ion-refresher>
+      <div class="bg" ng-show="(option_type || option_diff)" ng-click="close()" on-drag-up="onscroll()"></div>
+      <div class="options " ng-class="(option_type || option_diff)?'open':''">
+        <div class="options-title">
+        <span ng-click="open('type')">
+          {{typelist[data.test_type]}}
+          <i class="icon" ng-class="(option_type)?'ion-arrow-up-b':'ion-arrow-down-b'"></i>
+        </span>
+          <span ng-click="open('diff')">
+          全部难度
+          <i class="icon" ng-class="(option_diff)?'ion-arrow-up-b':'ion-arrow-down-b'"></i>
+        </span>
+        </div>
+        <div ng-show="option_type" class="options-info options-type">
+          <ul>
+            <li ng-repeat="(y,x) in typelist" ng-class="(data.test_type == y)?'active':''" ng-click="check_type(y)">{{x}}</li>
+          </ul>
+        </div>
+        <div ng-show="option_diff" class="options-info">
+          <ul>
+            <li ng-click="check_diff(0)" ng-class="(data.test_difficulty_level == 0)?'active':''">全部难度</li>
+            <li ng-click="check_diff(1)" ng-class="(data.test_difficulty_level == 1)?'active':''">一星</li>
+            <li ng-click="check_diff(2)" ng-class="(data.test_difficulty_level == 2)?'active':''">二星</li>
+            <li ng-click="check_diff(3)" ng-class="(data.test_difficulty_level == 3)?'active':''">三星</li>
+            <li ng-click="check_diff(4)" ng-class="(data.test_difficulty_level == 4)?'active':''">四星</li>
+            <li ng-click="check_diff(5)" ng-class="(data.test_difficulty_level == 5)?'active':''">五星</li>
+          </ul>
+        </div>
+      </div>
+      <div class="plac" ng-show="(option_type || option_diff)"></div>
+      <div class="title">全部错题（{{test_count}}）</div>
+      <div class="content" ng-repeat="item in list">
+        <div class="num">1、{{typelist[item.test_type]}}</div>
+        <div class="topic" ng-bind-html="item.topic"></div>
+        <div class="option" ng-if="item.options_a">
+          <span>A.</span>
+          <div class="option-content" ng-bind-html="item.options_a"></div>
+        </div>
+        <div class="option" ng-if="item.options_b">
+          <span>B.</span>
+          <div class="option-content" ng-bind-html="item.options_b"></div>
+        </div>
+        <div class="option" ng-if="item.options_c">
+          <span>C.</span>
+          <div class="option-content" ng-bind-html="item.options_c"></div>
+        </div>
+        <div class="option" ng-if="item.options_d">
+          <span>D.</span>
+          <div class="option-content" ng-bind-html="item.options_d"></div>
+        </div>
+        <div class="option" ng-if="item.options_e">
+          <span>E.</span>
+          <div class="option-content" ng-bind-html="item.options_e"></div>
+        </div>
+        <div class="option" ng-if="item.options_f">
+          <span>F.</span>
+          <div class="option-content" ng-bind-html="item.options_f"></div>
+        </div>
+        <div class="diff">
+          <span>难度</span>
+          <span class="star"></span>
+          <span class="unstar"></span>
+          <span class="unstar"></span>
+          <span class="unstar"></span>
+          <span class="unstar"></span>
+        </div>
+      </div>
+      <ion-infinite-scroll class="infinite-scroll" immediate-check="false" on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
+    </ion-scroll>
+  </ion-content>
+</ion-view>

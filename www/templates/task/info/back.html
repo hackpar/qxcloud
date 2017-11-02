@@ -1,0 +1,53 @@
+<div class="sub-title">
+  甲乙丙三个高中生利用休息时间前往初中母校看望老
+  师，三人只有一辆摩托车作为交通工具，且该车只能
+  带一人。于是他们商定，先由甲驾车带乙，丙步行。
+  时到达母校。三人只有一辆摩托车作为交通工具，且
+  该车只能带一人。<br><br>
+
+  1.三人从A到B共用了多长时间？<br>
+  2.距离多少？<br>
+</div>
+<div class="sub-img" ng-show="imgList.length > 0">
+  <div class="title">
+    我的答案<span>80%正确</span>
+  </div>
+  <ul>
+    <li ng-repeat="(y,x) in imgList track by $index">
+      <img ng-src="{{x.img}}" ng-click="click(x.img)">
+    </li>
+  </ul>
+</div>
+<div class="teacher-ping" ng-if="x.content.voice_list[0] && x.content.voice_list[0].voice.length > 0">
+  <div class="title">老师评语</div>
+  <div class="voice">
+    <ul>
+      <li ng-click="play=(play)?false:true" ng-class="(play)?'voice-play':''" ng-repeat="voice in x.content.voice_list[0].voice">{{voice.time}}″</li>
+    </ul>
+  </div>
+</div>
+<div class="teacher-ping" ng-if="x.content.voice_list[1] && x.content.voice_list[1].voice.length > 0">
+  <div class="title">题目讲解</div>
+  <div class="voice">
+    <ul>
+      <li ng-click="play=(play)?false:true" ng-class="(play)?'voice-play':''" ng-repeat="voice in x.content.voice_list[1].voice">{{voice.time}}″</li>
+    </ul>
+  </div>
+</div>
+<div class="teacher-ping">
+  <div class="title">题目讲解</div>
+  <div class="voice">
+    <ul>
+      <li ng-click="play=(play)?false:true" ng-class="(play)?'voice-play':''">10″</li>
+      <li>10″</li>
+      <li>10″</li>
+      <li>10″</li>
+    </ul>
+  </div>
+</div>
+<div class="teacher-content">
+  <div class="title">解析</div>
+  <div class="content">
+    {{x.content.solution}}
+  </div>
+</div>
